@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{background-color: bisque;
+        padding: 0;
+        margin: 0;
+    }
+
+    .body{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(43, 88, 173);
+
+    }
+   .container{
+    height: 60%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  
+   }
+   #head{
+    font-size: 50px;
+    margin-top: 25px;
+
+   }
+   .container div{
+    font-size: 25px;
+    padding: 6px;
+   }
+   .container button{
+    font-size: 15px;
+    padding: 5px; 
+    background-color: blue;
+    color: aliceblue;
+    border-radius: 20px;
+    margin-top: 10px;
+   }
+   .formcontainer{
+    padding: 10px;
+    margin-top: 50px;
+   }
+   .button{
+    display: flex;
+    justify-content: center;
+   }
+   .inputs{
+    display: flex;
+   }
+   #first input{
+        height: 20px;
+        border-color: grey;
+   }
+     #second input{
+        height: 20px;
+        border-color: grey;
+   }
+    </style>
+</head>
+
+<body class="body">
+    <form action="#" class="container">
+    <h1 id="head">login page</h1>
+    <div class="formcontainer">
+        <div class="inputs">
+    <div id="first">
+        <label for="name">Enter Your name</label>
+             <input id="name" type="text" placeholder="enter your name"></div>
+    <div id="second">
+        <label for="email">Enter Your Email</label>
+        <input id="email" type="text" placeholder="enter your gmail">
+    </div>
+    </div>
+    <div class="button">
+         <button id="button" type="submit">submit</button>
+    </div>     
+    </div>
+    </form>
+</body>
+</html>

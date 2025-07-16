@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Click Demo</title>
+</head>
+<body>
+ <button id="btn">Click me!</button>
+ <div id="box" style="width:100px;height:30px;background:lightblue; margin-top: 40px;">
+ Hover me
+</div>
+<form id="todo-form">
+ <input id="task" placeholder="New task…" required>
+ <button type="submit">Add</button>
+</form>
+<ul id="tasks"></ul>
+
+
+ <script >
+   const btn = document.getElementById('btn');
+   btn.addEventListener('click', () => {
+   alert('👋 Hello, world!');
+   });
+   const box = document.getElementById('box');
+box.addEventListener('mouseover', () => {
+ box.style.background = 'salmon';
+});
+box.addEventListener('mouseout', () => {
+ box.style.background = 'lightblue';
+});
+const form = document.getElementById('todo-form');
+const input = document.getElementById('task');
+const list  = document.getElementById('tasks');
+
+
+form.addEventListener('submit', e => {
+ e.preventDefault();           // stops the page reloading
+ const li = document.createElement('li');
+ li.textContent = input.value;
+ list.appendChild(li);
+ input.value = '';             // clear field
+});
+ </script>
+</body>
+</html>
+
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+    }
+    
+    #heading {
+      position: absolute;
+      top: 40px;
+      text-align: center;
+      color: #fff;
+      font-size: 2.5rem;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input {
+      padding: 0.7rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #8e2de2;
+      box-shadow: 0 0 5px rgba(142, 45, 226, 0.5);
+    }
+
+    button {
+      padding: 0.7rem;
+      background-color: #8e2de2;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #4a00e0;
+    }
+    .highlight{
+      background-color: red;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1 id="heading">Login Form</h1>
+
+  <form action="submit" class="container">
+    <div class="main">
+      <label for="name">Enter your name:</label>
+      <input id="name" type="text" placeholder="Enter your name" required>
+    </div>
+    <div class="main">
+      <label for="mail">Enter your Gmail:</label>
+      <input id="mail" type="email" placeholder="Enter your Gmail" required>
+    </div>
+    <div class="main">
+      <label for="pass">Enter password:</label>
+      <input id="pass" type="password" placeholder="Enter your password" required>
+    </div>
+    <button onclick="customise()" type="submit" id="btn" >Submit</button>
+  </form>
+<script>
+        function customise(){
+        // document.getElementById('btn').style.backgroundColor="red";
+         document.getElementById('btn').innerText="Form submit nhi hua h baby";
+          //  document.getElementById('btn').classList.add("highlight");
+           document.getElementById('btn').classList.toggle("highlight")
+}
+</script>
+</body>
+</html>
