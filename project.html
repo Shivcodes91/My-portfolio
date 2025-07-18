@@ -6,29 +6,61 @@
   <title>My Projects - Shivang Rai</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Poppins', sans-serif;
       background-color: #121212;
       color: white;
+      line-height: 1.6;
     }
 
     header {
-      padding: 15px;
+      position: relative;
+      padding: 40px 20px 20px;
       text-align: center;
       background: #1f1f1f;
     }
 
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 0.85rem;
+      background: transparent;
+      border: 1px solid #5db9ee;
+      color: #5db9ee;
+      padding: 0.5rem 1.2rem;
+      border-radius: 0.4rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #4fc3f7;
+      color: #121212;
+    }
+
     header h1 {
       color: #4fc3f7;
-      margin: 8px 0;
+      margin: 10px 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #ccc;
     }
 
     .projects-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
-      padding: 40px;
+      padding: 30px 20px;
       max-width: 1200px;
       margin: auto;
     }
@@ -55,81 +87,85 @@
     .project-description {
       font-size: 0.95rem;
       line-height: 1.5;
+      color: #ccc;
     }
 
     .project-btn {
-     display: inline-block;
-     margin-top: 15px;
-     padding: 8px 15px;
-     background: transparent;
-     border: 0.8px solid #4fc3f7;  
-     color: #4fc3f7;
-     border-radius: 5px;
-     text-decoration: none;
-     font-weight: 500;             
-     transition: all 0.3s ease;
-     border-radius: 4px;
-    }
-   
-
-
-    .project-btn:hover {
-      background: #4fc3f7;
-      color: #121212;
-      border: 0.8px solid #4fc3f7;
-    }
-
-    .back-btn {
-      position: absolute;
-      top: 130px;
-      left: 20px;
-      font-size: small;
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 15px;
       background: transparent;
-      border: 1px solid #5db9ee;
-      color: #5db9ee;
-      padding: 0.5rem 1.2rem;
-      border-radius: 0.4rem;
+      border: 0.8px solid #4fc3f7;
+      color: #4fc3f7;
+      border-radius: 5px;
       text-decoration: none;
+      font-weight: 500;
       transition: all 0.3s ease;
     }
 
-    .back-btn:hover {
-      background-color: #4fc3f7;
+    .project-btn:hover {
+      background: #4fc3f7;
       color: #121212;
     }
 
     .see-more-container {
       text-align: center;
-      margin-top: 0px;
+      margin: 20px 0 40px;
     }
 
     .see-more-btn {
       padding: 10px 25px;
       background: transparent;
       color: #4fc3f7;
-      border: .8px solid #4fc3f7;
+      border: 0.8px solid #4fc3f7;
       border-radius: 4px;
       text-decoration: none;
       transition: all 0.3s ease;
-      font-size: .7rem;
+      font-size: 0.9rem;
     }
 
     .see-more-btn:hover {
       background: #4fc3f7;
       color: #121212;
-       box-shadow: 0 0 12px #5db9ee;
+      box-shadow: 0 0 12px #5db9ee;
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      .project-title {
+        font-size: 1.1rem;
+      }
+
+      .project-description {
+        font-size: 0.9rem;
+      }
+
+      .back-btn {
+        font-size: 0.75rem;
+        padding: 0.4rem 1rem;
+        top: 15px;
+        left: 15px;
+      }
+
+      .project-btn, .see-more-btn {
+        font-size: 0.8rem;
+        padding: 7px 14px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
+    <a class="back-btn" href="index.html">← Home</a>
     <h1>My Projects</h1>
     <p>A showcase of work I'm proud of!</p>
   </header>
 
   <section class="projects-container">
-
     <div class="project-card">
       <h2 class="project-title">Kisan Saathi</h2>
       <p class="project-description">
@@ -139,11 +175,11 @@
     </div>
 
     <div class="project-card">
-      <h2 class="project-title">University management system</h2>
+      <h2 class="project-title">University Management System</h2>
       <p class="project-description">
-        	Designed backend for student, teacher, and fee management using Java and PostgreSQL. Skills Used: Java, PostgreSQL 
+        Designed backend for student, teacher, and fee management using Java and PostgreSQL.
       </p>
-      <a href="https://github.com/Shivcodes91/java-projects" class="project-btn">View</a>
+      <a href="https://github.com/Shivcodes91/java-projects" class="project-btn" target="_blank">View</a>
     </div>
 
     <div class="project-card">
@@ -154,40 +190,33 @@
       <a href="https://github.com/Shivcodes91/Python-/tree/main/jarvis" class="project-btn" target="_blank">Source Code</a>
     </div>
 
-   
     <div class="project-card">
       <h2 class="project-title">Portfolio Website</h2>
       <p class="project-description">
         A personal portfolio website built with HTML and CSS. Showcases skills, projects, and contact information.
       </p>
-      
     </div>
 
-   
     <div class="project-card">
-      <h2 class="project-title">waste classification software</h2>
+      <h2 class="project-title">Waste Classification Software</h2>
       <p class="project-description">
-        A simple web-based weather application that fetches real-time weather data using an API and displays it with a clean UI.
+        A simple web-based app for classifying waste using image input. Future scope includes ML integration.
       </p>
       <a href="#" class="project-btn">View App</a>
     </div>
 
-    
     <div class="project-card">
       <h2 class="project-title">Blog Website</h2>
       <p class="project-description">
-        A static blog website created using HTML and CSS. It includes multiple posts, categories, and a responsive design.
+        A static blog website created using HTML and CSS. Includes multiple posts, categories, and responsive layout.
       </p>
       <a href="#" class="project-btn">Read More</a>
     </div>
-
   </section>
 
   <div class="see-more-container">
-    <a href="https://github.com/Shivcodes91" class="see-more-btn">See More Projects On My Github</a>
+    <a href="https://github.com/Shivcodes91" class="see-more-btn" target="_blank">See More Projects On My GitHub</a>
   </div>
-
-  <a class="back-btn" href="index.html">← Home</a>
 
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Skills - Shivang Rai</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -24,13 +24,40 @@
       justify-content: center;
       align-items: center;
       padding: 6rem 2rem 2rem;
+      position: relative;
+    }
+
+    /* Home and Email Buttons */
+    .top-buttons {
+      position: absolute;
+      top: 1.5rem;
+      left: 2rem;
+      display: flex;
+      gap: 1rem;
+      z-index: 100;
+    }
+
+    .top-buttons button {
+      background-color: #5db9ee;
+      color: #fff;
+      padding: 0.5rem 1.2rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .top-buttons button:hover {
+      background-color: #45a1d4;
     }
 
     .skills-content {
       max-width: 1200px;
       width: 100%;
-      background-color: rgba(255, 255, 255, 0.02);
-      padding: 3rem;
+      background-color: rgba(255, 255, 255, 0.03);
+      padding: 3rem 2rem;
       border-radius: 1rem;
       text-align: center;
       backdrop-filter: blur(8px);
@@ -39,7 +66,7 @@
     }
 
     .skills-content h2 {
-      font-size: 3rem;
+      font-size: 2.8rem;
       color: #5db9ee;
       margin-bottom: 2rem;
       position: relative;
@@ -59,201 +86,139 @@
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
       margin-top: 3rem;
-      justify-items: center;
     }
 
-    .skill-container {
-      transition: all 0.3s ease;
+    .skill-card {
+      background-color: #2a2a2a;
+      padding: 2rem 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
     }
 
-    .skill-container:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px #5db9ee80;
+    .skill-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px #5db9ee99;
     }
 
-    .skill-circle {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      position: relative;
+    .skill-card i {
+      font-size: 2.5rem;
+      color: #5db9ee;
+      margin-bottom: 1rem;
     }
 
-    .fill-ring {
+    .skill-card span {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .skill-progress {
       width: 100%;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .skill-progress-bar {
       height: 100%;
-      border-radius: 50%;
-      background: conic-gradient(#5db9ee 0deg, rgba(255,255,255,0.08) 0deg);
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
-
-    .skill-inner {
-      width: 120px;
-      height: 120px;
-      background: #1f1f1f;
-      border-radius: 50%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid rgba(93, 185, 238, 0.3);
-    }
-
-    .skill-inner i {
-      font-size: 1.5rem;
-      color: #5db9ee;
-      margin-bottom: 0.3rem;
-    }
-
-    .skill-inner span {
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-
-    .percent-label {
-      position: absolute;
-      bottom: -1.8rem;
-      font-size: 1rem;
-      font-weight: bold;
-      color: #5db9ee;
-      text-shadow: 0 0 5px #5db9ee99;
+      background: #5db9ee;
+      width: 0%;
+      transition: width 2s ease;
     }
 
     @media (max-width: 600px) {
-      .skill-circle {
-        width: 120px;
-        height: 120px;
+      .skills-content h2 {
+        font-size: 2rem;
       }
 
-      .skill-inner {
-        width: 90px;
-        height: 90px;
+      .skill-card i {
+        font-size: 2rem;
       }
 
-      .percent-label {
-        font-size: 0.85rem;
+      .top-buttons {
+        flex-direction: column;
+        top: 1rem;
+        left: 1rem;
+      }
+
+      .top-buttons button {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
       }
     }
   </style>
 </head>
 <body>
 
+<!-- Buttons: Home and Email -->
+<div class="top-buttons">
+  <a href="index.html"><button>Home</button></a>
+</div>
+
 <section class="skills-section" id="skills">
   <div class="skills-content">
     <h2>My <span style="color:#fff;">Skills</span></h2>
     <div class="skills-grid">
 
-      <div class="skill-container">
-        <div class="skill-circle">
-          <div class="fill-ring" data-percent="95"></div>
-          <div class="skill-inner">
-            <i class="fab fa-html5"></i>
-            <span>HTML & CSS</span>
-          </div>
-          <div class="percent-label">95%</div>
-        </div>
+      <div class="skill-card">
+        <i class="fab fa-html5"></i>
+        <span>HTML & CSS</span>
+        <div class="skill-progress"><div class="skill-progress-bar" data-percent="95"></div></div>
       </div>
 
-      <div class="skill-container">
-        <div class="skill-circle">
-          <div class="fill-ring" data-percent="85"></div>
-          <div class="skill-inner">
-            <i class="fab fa-js-square"></i>
-            <span>JavaScript</span>
-          </div>
-          <div class="percent-label">85%</div>
-        </div>
+      <div class="skill-card">
+        <i class="fab fa-js-square"></i>
+        <span>JavaScript</span>
+        <div class="skill-progress"><div class="skill-progress-bar" data-percent="85"></div></div>
       </div>
 
-      <div class="skill-container">
-        <div class="skill-circle">
-          <div class="fill-ring" data-percent="75"></div>
-          <div class="skill-inner">
-            <i class="fab fa-react"></i>
-            <span>React</span>
-          </div>
-          <div class="percent-label">75%</div>
-        </div>
+      <div class="skill-card">
+        <i class="fab fa-react"></i>
+        <span>React</span>
+        <div class="skill-progress"><div class="skill-progress-bar" data-percent="75"></div></div>
       </div>
 
-      <div class="skill-container">
-        <div class="skill-circle">
-          <div class="fill-ring" data-percent="90"></div>
-          <div class="skill-inner">
-            <i class="fab fa-python"></i>
-            <span>Python</span>
-          </div>
-          <div class="percent-label">90%</div>
-        </div>
+      <div class="skill-card">
+        <i class="fab fa-python"></i>
+        <span>Python</span>
+        <div class="skill-progress"><div class="skill-progress-bar" data-percent="90"></div></div>
       </div>
 
-      <div class="skill-container">
-        <div class="skill-circle">
-          <div class="fill-ring" data-percent="80"></div>
-          <div class="skill-inner">
-            <i class="fab fa-java"></i>
-            <span>Java</span>
-          </div>
-          <div class="percent-label">80%</div>
-        </div>
+      <div class="skill-card">
+        <i class="fab fa-java"></i>
+        <span>Java</span>
+        <div class="skill-progress"><div class="skill-progress-bar" data-percent="80"></div></div>
       </div>
 
-        <div class="skill-container">
-            <div class="skill-circle">
-            <div class="fill-ring" data-percent="88"></div>
-                <div class="skill-inner">
-                  <i class="fas fa-database"></i>
-                  <span>SQL</span>
-            </div>
-         <div class="percent-label">88%</div>
-            </div>
-            </div>
-   
+      <div class="skill-card">
+        <i class="fas fa-database"></i>
+        <span>SQL</span>
+        <div class="skill-progress"><div class="skill-progress-bar" data-percent="88"></div></div>
+      </div>
 
-      <div class="skill-container">
-        <div class="skill-circle">
-          <div class="fill-ring" data-percent="70"></div>
-          <div class="skill-inner">
-            <i class="fas fa-chart-bar"></i>
-            <span>Power BI</span>
-          </div>
-          <div class="percent-label">70%</div>
-        </div>
+      <div class="skill-card">
+        <i class="fas fa-chart-bar"></i>
+        <span>Power BI</span>
+        <div class="skill-progress"><div class="skill-progress-bar" data-percent="70"></div></div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- Animation Script -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const rings = document.querySelectorAll(".fill-ring");
-
-    rings.forEach((ring, index) => {
-      const percent = parseInt(ring.getAttribute("data-percent"));
-      let current = 0;
-
-      const interval = setInterval(() => {
-        current++;
-        if (current <= percent) {
-          const angle = current * 3.6;
-          ring.style.background = `conic-gradient(#5db9ee ${angle}deg, rgba(255,255,255,0.08) ${angle}deg)`;
-        } else {
-          clearInterval(interval);
-        }
-      }, 15 + index * 2);
+    const bars = document.querySelectorAll(".skill-progress-bar");
+    bars.forEach(bar => {
+      const percent = bar.getAttribute("data-percent");
+      bar.style.width = percent + "%";
     });
   });
 </script>
